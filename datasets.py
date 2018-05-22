@@ -118,7 +118,15 @@ def random_3inputs(size=500):
     output_y = np.array(output_y, dtype='int32')
     return output_X, output_y
     
+def pure_random(x, x_min=0, x_max=10, y_min=0, y_max=10):
+    '''
+    Int, Num, Num, Num, Num -> NP.ARRAY, NP.ARRAY
 
+    Returns two np.arrays where the first is a random set of 2
+    inputs and the second is a set of random (unpredictable) labels
+    '''
+    return np.array([[random.uniform(x_min, x_max),
+                      random.uniform(y_min, y_max)] for i in range(x)]),np.array([random.randint(0,1) for i in range(x)])
 
 
 
