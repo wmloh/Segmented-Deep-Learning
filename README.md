@@ -1,4 +1,4 @@
-# Segmented-Deep-Learning
+# Segmented Deep Neural Network
 ------------------------------------------------------------------------------------------------------------------------------
 Dependencies
 * NumPy
