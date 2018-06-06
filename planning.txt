@@ -1,0 +1,2 @@
+Features to add:
+* Conversion to regression 
