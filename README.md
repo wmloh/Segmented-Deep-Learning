@@ -18,12 +18,23 @@ There are two objects (as of June 6, 2018) in this repository: Model and Operati
 
 **Operation** is an object that arranges Model objects in a logical structure (a graph-like structure). Data inputs can be passed into the Operation object all at once; the first layer of Models will produce their predictions which is then passed to the second layer and the flow continues. An advantage of this is developers can assert control over the learning process through modularization of smaller individual Models. Debugging and retrain can potentially be simpler as a few small Models need to be retrain instead of the entire massive neural network. A disadvantage, however, is the requirement of feature engineering to manually define the architecture of the smaller neural network into a cohesive piece. Nevertheless, this object may prove useful in prototyping for domain experts despite some obvious limitations.
 
+## Additional Tools
+
+To assist constructing the neural network, some tools are provided.
+
+_util.diagnosis_ enables training of multiple models with different regularization strength and automatically plots a graph of cost function with respect to regularization strength.
+
+_datasets_ folder provides a simple dataset for quick training of a neural network. _datasets.logical_ provides AND, OR, NOT datasets and _datasets.random_ provides a few customized three inputs datasets and randomized datasets.
+
+_optimizers_ folder provides two optimization modules: Stochastic Gradient Descent (default) and Adam Optimizer. 
+
 ## Sample Code
 
 This sample code aims to produce a simple logic operation for classification:
 _For a given A, B, C, D, the Operation object should predict based on this logic operation:
 NOT ((A OR B) OR (C AND D))_
 
+This code is written on ```main``` file:
 ```
 from operation import Operation
 from model import Model
@@ -62,4 +73,4 @@ if Ops.check:
 ```
 Note: Predictions are given as one hot encoding: ```[1, 0]``` means class 0 (FALSE) and ```[0, 1]``` means class 1 (TRUE)
 
-The architecture of the Models is relatively simple (1 hidden layer with 2 nodes). This is because elementary logic operations can be easily learned. For other more complex mathematical (e.g. sklearn.datasets.make_moons), more sophisticated hidden layer architecture may be needed.
+The architecture of the Models is relatively simple (1 hidden layer with 2 nodes). This is because elementary logic operations can be easily learned. For other more complex mathematical functions (e.g. sklearn.datasets.make_moons), more sophisticated hidden layer architecture may be needed.
