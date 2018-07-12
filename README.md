@@ -12,7 +12,7 @@ The idea of segmentation (not to be confused with Semantic Segmentation in Compu
 
 ## Objects
 
-There are two objects (as of June 6, 2018) in this repository: Model and Operation.
+There are two classes (as of June 6, 2018) in this repository: Model and Operation.
 
 **Model** is a standard neural network object with fully customizable hidden layer architecture, capable of deep learning. The main limitation of this implementation is the inability to utilize GPU processing power or multiprocessing functions. Research and development is ongoing to improve training rate such as consider implementation with the _multiprocessing_ library in Python.
 
